@@ -30,12 +30,12 @@ def root():
 
 @app.get("/parking/")
 def get_parking():
-    return random.randint(0, 10)
+    return {"score": random.randint(0, 10)}
 
 
 @app.get("/parking/closest/")
 def get_closest_parking():
-    return "https://2gis.ru/moscow/geo/4504656217398120"
+    return {"address": "https://2gis.ru/moscow/geo/4504656217398120"}
 
 
 @app.post("/users/", response_model=schemas.User)
