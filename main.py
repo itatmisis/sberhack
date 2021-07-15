@@ -1,3 +1,5 @@
+import random
+
 import uvicorn
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
@@ -24,6 +26,11 @@ def get_db():
 @app.get("/")
 def root():
     return "Hello, FastAPI!"
+
+
+@app.get("/parking/")
+def get_parking():
+    return random.randint(0, 11)
 
 
 @app.post("/users/", response_model=schemas.User)
