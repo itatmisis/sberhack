@@ -14,3 +14,15 @@ def create_user(db: Session, user: schemas.UserCreate):
     db.commit()
     db.refresh(db_user)
     return db_user
+
+
+def update_user(db: Session, user: schemas.UserCreate):
+    db_user = db.query(models.User).filter(models.User.id == user.id).first()
+
+    for var, value in vars(user).items():
+        setattr(db_user, var, value) if value is not None else None
+
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user

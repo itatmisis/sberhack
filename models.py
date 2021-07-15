@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, Integer
 
 from database import Base
 
@@ -10,4 +10,4 @@ class User(Base):
 
     city = Column(String, nullable=True)
     street = Column(String, nullable=True)
-    house = Column(String, nullable=True)
+    house = Column(Integer, nullable=True)
