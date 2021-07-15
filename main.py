@@ -35,7 +35,7 @@ def get_parking():
 
 @app.get("/parking/closest/")
 def get_closest_parking():
-    return "https://2gis.com/868789526785823"
+    return "https://2gis.ru/moscow/geo/4504656217398120"
 
 
 @app.post("/users/", response_model=schemas.User)
