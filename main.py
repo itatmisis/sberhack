@@ -33,6 +33,11 @@ def get_parking():
     return random.randint(0, 11)
 
 
+@app.get("/parking/closest/")
+def get_closest_parking():
+    return "https://2gis.com/868789526785823"
+
+
 @app.post("/users/", response_model=schemas.User)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = crud.get_user(db, user_id=user.id)
