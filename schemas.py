@@ -9,6 +9,9 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     id: str
+    city: Optional[str]
+    street: Optional[str]
+    house: Optional[str]
 
 
 class User(UserBase):
